@@ -1,23 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  const date = new Date();
-  const hours = date.getHours();
-  let timeOfDay = hours < 12 ? "morning" : hours >= 12 && hours <= 17 ? "afternoon" : "night";
+class App extends React.Component {
 
-  const styles = {
-    color: "red", 
-    backgroundColor: "black",
-    fontSize: 20
-  };
+  constructor() {
+    super();
+    this.state = {};
+  }
 
-  return (
-    <div className="App">
-      <h1 style={styles}> Good {timeOfDay} </h1>
-    </div>
-  );
+
+  render() {
+    return (
+        <div>
+          Hello
+        </div>
+    )
+  }
+
 }
 
 export default App;
