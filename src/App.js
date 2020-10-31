@@ -1,40 +1,19 @@
 import React, {useState} from 'react';
 import './App.css';
 
-
-/* The functional component using the method useState provided by react allow us to reduce the amount 
-of code used on a class component method */
-
 function App() {
-  // it returns an array [null, f()]
-  // Array destructuring (the first passed to useState is given to the answer constant)
-  const [answer] = useState("No");
-
+  const [count, setCount] = useState(0);
   return (
       <div>
-        <h1>Is state important to know? : {answer}</h1>
+        <h1>{count}</h1>
+        {/* Manipulation the State 
+          anon function needed on the event onClick
+          usage of the function provided by the React.useState method
+          usage of the prev{State} and set a new value
+        */}
+        <button onClick={() => {setCount(prevCount=> prevCount+1)}}>Change!</button>
       </div>
   );
 }
-
-// class App extends React.Component {
-
-//   constructor() {
-//     super();
-//     this.state = {
-//       answer: "Yes"
-//     };
-//   }
-
-
-//   render() {
-//     return (
-//         <div>
-//           <h1>Is state important to know? : {this.state.answer}</h1>
-//         </div>
-//     )
-//   }
-
-// }
 
 export default App;
