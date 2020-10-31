@@ -4,31 +4,32 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
   
-  function increment() {
-    /* 
-    usage of the function provided by the React.useState method
-    usage of the prev{State} and set a new value
-    */
-    setCount(prevCount => prevCount +1);
-  }
 
-  function decrement() {
-    /* 
-    usage of the function provided by the React.useState method
-    usage of the prev{State} and set a new value
-    */
-    setCount(prevCount => prevCount - 1);
+  function performOperation(operation) {
+    setCount(prevCount => {
+      if(operation === '+'){
+        return prevCount + 1;
+      }
+      if(operation === '-'){
+        return prevCount - 1;
+      }
+      if(operation === '*'){
+        return prevCount * 2;
+      }
+      if(operation === '/'){
+        return prevCount / 2;
+      }
+      return prevCount;
+    })
   }
   
   return (
       <div>
         <h1>{count}</h1>
-        {/* Manipulation the State 
-          anon function needed on the event onClick
-          calling an increment function (a function inside of our functional component this looks more organized)
-        */}
-        <button onClick={increment}>Increment!</button>
-        <button onClick={decrement}>Decrement!</button>
+        <button onClick={() => performOperation('+')}>Increment!</button>
+        <button onClick={() => performOperation('-')}>Decrement!</button>
+        <button onClick={() => performOperation('*')}>Multiply!</button>
+        <button onClick={() => performOperation('/')}>Division!</button>
       </div>
   );
 }
