@@ -11,6 +11,14 @@ function App() {
     */
     setCount(prevCount => prevCount +1);
   }
+
+  function decrement() {
+    /* 
+    usage of the function provided by the React.useState method
+    usage of the prev{State} and set a new value
+    */
+    setCount(prevCount => prevCount - 1);
+  }
   
   return (
       <div>
@@ -19,7 +27,8 @@ function App() {
           anon function needed on the event onClick
           calling an increment function (a function inside of our functional component this looks more organized)
         */}
-        <button onClick={increment}>Change!</button>
+        <button onClick={increment}>Increment!</button>
+        <button onClick={decrement}>Decrement!</button>
       </div>
   );
 }
