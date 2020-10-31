@@ -1,5 +1,6 @@
-# react-learning-app
+# react-hooks-learning-app
 
-I just create this application with learning purposes in mind, so don't be shy to do some comments that can help me to improve my skills on this topic.
+This repo was created with the purpose of save of the commit history regarding to the learning process of hooks...
+
 
 
